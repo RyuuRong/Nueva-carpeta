@@ -1,17 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Crhistian</title>
-</head>
-<body>
-    <h1 class="times-new-roman">Soy un mmg?</h1>
-   <div class="justify-center">
-    <button>Si, soy un mmg</button>
-    <button>No, no soy un mmg</button>
-    <button>Talvez</button>
-    <button>t.t</button>
-   </div>
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navegador Chromium con Sidebar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="primary-sidebar" aria-label="Barra lateral principal">
+        <div class="brand">N</div>
+        <button class="sidebar-icon active" data-panel="apps" title="Apps">☰</button>
+        <button class="sidebar-icon" data-panel="history" title="Historial">🕘</button>
+        <button class="sidebar-icon" data-panel="bookmarks" title="Favoritos">★</button>
+        <button class="sidebar-icon" data-panel="settings" title="Ajustes">⚙</button>
+      </aside>
+
+      <aside class="secondary-sidebar" id="panel-content" aria-live="polite">
+        <h2 id="panel-title">Apps rápidas</h2>
+        <div id="panel-body" class="panel-body"></div>
+      </aside>
+
+      <main class="browser-area">
+        <header class="toolbar">
+          <button id="back-btn" class="tool-btn">←</button>
+          <button id="forward-btn" class="tool-btn">→</button>
+          <button id="reload-btn" class="tool-btn">⟳</button>
+          <input
+            id="address-bar"
+            type="text"
+            value="https://example.com"
+            aria-label="Barra de direcciones"
+          />
+          <button id="go-btn" class="tool-btn go">Ir</button>
+        </header>
+
+        <section class="webview-wrapper">
+          <iframe
+            id="web-frame"
+            src="https://example.com"
+            title="Vista web"
+            referrerpolicy="no-referrer"
+          ></iframe>
+        </section>
+
+        <footer class="status-bar">
+          <span id="engine-badge">Cargando motor...</span>
+          <span>•</span>
+          <span id="status-text">Listo</span>
+        </footer>
+      </main>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
 </html>
