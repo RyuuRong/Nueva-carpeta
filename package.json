@@ -1,0 +1,14 @@
+{
+  "name": "opera-sidebar-browser",
+  "version": "1.0.0",
+  "description": "Chromium-based mini browser with Opera-style sidebars built with Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "check": "node --check main.js && node --check preload.js && node --check renderer.js"
+  },
+  "devDependencies": {
+    "electron": "^31.3.1"
+  }
+}
